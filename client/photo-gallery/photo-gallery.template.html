@@ -1,0 +1,50 @@
+<div id="photo-gallery-app">
+  <h1>photo gallery</h1>
+  <div id="photo-gallery" ng-if="!$ctrl.isSearching && !$ctrl.isCameraing">
+    <div id="photo-gallery-display">
+      <img ng-src="{{$ctrl.currentPhotoUrl || 'https://res.cloudinary.com/zyl-edison/image/upload/comp7082/photo-gallery/no-image.png'}}" />
+      <div id="photo-gallery-photo-count" ng-if="$ctrl.photoList.length > 0">
+        {{$ctrl.photoIndexPointer + 1}} / {{$ctrl.photoList.length}}
+      </div>
+    </div>
+    <div id="photo-gallery-display-date">
+      {{$ctrl.currentPhotoCreateDate | date : 'MMM d, y h:mm:ss a'}}
+    </div>
+    <div class="photo-gallery-control">
+      <div class="photo-gallery-control-element">
+        <input id="photo-gallery-caption-input" ng-model="$ctrl.currentPhotoCaption" ng-disabled="!$ctrl.photoList.length" />
+      </div>
+      <div class="photo-gallery-control-element">
+        <button id="button-prev" ng-if="$ctrl.photoList.length > 1" ng-click="$ctrl.gotoPhoto(-1)">prev</button>
+        <button id="button-snap" ng-click="$ctrl.startCamera()">snap</button>
+        <button id="button-next" ng-if="$ctrl.photoList.length > 1" ng-click="$ctrl.gotoPhoto(1)">next</button>
+      </div>
+      <div class="photo-gallery-control-element">
+          <button id="button-goto-search" ng-click="$ctrl.gotoSearch()">search</button>
+        </div>
+    </div>
+  </div>
+
+  <div id="photo-gallery-search" ng-if="$ctrl.isSearching && !$ctrl.isCameraing">
+    <div class="photo-gallery-control">
+        <div class="photo-gallery-control-element">
+          <label>Caption: </label>
+          <input id="photo-gallery-search-caption-input" ng-model="$ctrl.searchCaption" />
+        </div>
+        <div class="photo-gallery-control-element">
+          <label>Start Date: </label>
+          <input id="photo-gallery-search-startdate-input" ng-model="$ctrl.searchStartdate" />
+        </div>
+        <div class="photo-gallery-control-element">
+          <label>End Date: </label>
+          <input id="photo-gallery-search-enddate-input" ng-model="$ctrl.searchEnddate" />
+        </div>
+        <div class="photo-gallery-control-element">
+          <button id="button-search" ng-click="$ctrl.search()">search</button>
+        </div>
+      </div>
+  </div>
+  <div id="photo-gallery-camera" ng-if="$ctrl.isCameraing && !$ctrl.isSearching">
+    <web-camera on-photo-captured="$ctrl.onPhotoCaptured(data)" />
+  </div>
+</div>

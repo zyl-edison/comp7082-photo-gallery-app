@@ -1,0 +1,67 @@
+{
+  "name": "comp7082-photo-gallery-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "env NODE_ENV=development WORK_DIR=\"$PWD\" nodemon --require babel-register --require babel-polyfill index.js",
+    "integration": "protractor protractor.conf.js",
+    "test": "env NODE_ENV=test WORK_DIR=\"$PWD\" nyc mocha 'test/**/*.test.js' --timeout 60000 --seneca.log.quiet",
+    "build": "rm -rf dist && babel . -d dist --ignore node_modules,coverage,test",
+    "clean": "rm -rf dist .nyc_output coverage log npm-debug.log",
+    "eslint": "eslint system/** client/** index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyl-edison/comp7082-photo-gallery-app.git"
+  },
+  "author": "Edison",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/zyl-edison/comp7082-photo-gallery-app/issues"
+  },
+  "homepage": "https://github.com/zyl-edison/comp7082-photo-gallery-app#readme",
+  "nyc": {
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "sourceMap": false,
+    "instrument": false,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "check-coverage": true
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-istanbul": "^5.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^5.9.0",
+    "eslint-config-google": "^0.11.0",
+    "mocha": "^5.2.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.7",
+    "nyc": "^13.1.0",
+    "protractor": "^5.4.2",
+    "sinon": "^7.1.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.13.2",
+    "express": "^4.16.4",
+    "js-yaml": "^3.12.0",
+    "moment": "^2.22.2",
+    "query-string": "^6.2.0",
+    "request": "^2.88.0"
+  }
+}

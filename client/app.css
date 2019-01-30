@@ -1,0 +1,149 @@
+html {
+  font-family: sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {margin: 0;}
+
+#photo-gallery-app {
+  width: 400px;
+  height: 600px;
+  border: 1px solid #000000;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+#photo-gallery-app h1 {
+  text-align: center;
+  font-size: 22px;
+  text-transform: uppercase;
+  height: 50px;
+  line-height: 50px;
+  background-color: #4587F0;
+  color: #FFFFFF;
+}
+
+#photo-gallery-display {
+  width: 100%;
+  position: relative;
+}
+
+#photo-gallery-photo-count {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+
+#photo-gallery-display img{
+  width: 100%;
+}
+
+#photo-gallery-display-date {
+  width: 100%;
+  color: #666666;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.photo-gallery-control {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.photo-gallery-control-element {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px 0;
+}
+
+.photo-gallery-control-element label {
+  width: 100px;
+}
+
+.photo-gallery-control-element input {
+  flex-grow: 1;
+}
+
+.photo-gallery-control-element button {
+  text-transform: uppercase;
+}
+
+.photo-gallery-control-element #button-prev {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.photo-gallery-control-element #button-snap {
+  flex-grow: 2;
+}
+
+.photo-gallery-control-element #button-next {
+  margin-left: 10px;
+}
+
+.photo-gallery-control-element #button-capture,
+.photo-gallery-control-element #button-search,
+.photo-gallery-control-element #button-goto-search,
+.photo-gallery-control-element #button-next
+ {
+  flex-grow: 1;
+}
+
+#photo-gallery-camera {
+  position: relative;
+}
+
+#photo-gallery-camera #video,
+#photo-gallery-camera #canvas {
+  position: absolute;
+}
+
+#photo-gallery-camera #video {
+  z-index: 2;
+}
+
+#photo-gallery-camera #canvas {
+  z-index: 1;
+}
+
+#photo-gallery-camera .photo-capture-control {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  margin: 0;
+  z-index: 3;
+}
+
+.photo-gallery-control-element #button-capture {
+  margin: 0 10px;
+  width: 380px;
+}
+
+.photo-gallery-control-element #button-cancel {
+  margin: 0 5px 0 10px;
+  width: 185px;
+  background-color: red;
+  border: none;
+  color: #FFFFFF;
+}
+
+.photo-gallery-control-element #button-accept {
+  margin: 0 10px 0 5px;
+  width: 185px;
+  background-color: green;
+  border: none;
+  color: #FFFFFF;
+}

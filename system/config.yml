@@ -1,0 +1,25 @@
+# GLOBAL/SHARED CONFIGURATION
+global:
+  api:
+    port: 8000
+    routes:
+# VERSON 1 CONFIGURATION
+version1:
+  api:
+    prefix: v1
+    routes:
+      photo:
+        -
+          url:
+          method: POST
+          action: create
+        -
+          url:
+          method: GET
+          action: acquire
+
+# VERSION 2 CONFIGURATION
+version2:
+  api:
+    prefix: v2
+    routes:
