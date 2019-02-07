@@ -22,3 +22,10 @@ COMP7082 PGA is a web application based on the angularjs and nodejs.
 - npm start (run the application at localhost:8000)
 - npm test (unit tests)
 - npm run integration (end to end tests)
+
+## Features
+* Take photos
+* View/Scroll photo(s)
+* Search photos by caption
+* Search photos by created date
+* Seacch pohtos by geolocation
