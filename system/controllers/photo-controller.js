@@ -26,10 +26,12 @@ class PhotoController extends Controller {
     return (req, res) => {
       (async () => {
         try {
-          const {imageDataUrl} = req.body;
+          const {imageDataUrl, lat, lng} = req.body;
+          const context = `lat=${lat}|lng=${lng}`;
           const photo = await cloudinary.v2.uploader.upload(imageDataUrl, {
             public_id: `caption_${Date.now()}`,
             folder: 'comp7082/photo-gallery',
+            context,
           });
           res.status(201).send(photo);
         } catch (e) {
@@ -47,6 +49,8 @@ class PhotoController extends Controller {
           const resourcesRes = await cloudinary.v2.api.resources({
             type: 'upload',
             prefix: 'comp7082/photo-gallery',
+            context: true,
+            max_results: 500,
           });
           const {resources} = resourcesRes;
           res.status(200).send(resources.filter((r) => {

@@ -47,4 +47,32 @@ describe('photo gallery search', () => {
       assert(createDate <= new Date('01/31/2019'));
     });
   });
+
+  it('should show 5 photos within geolocation boundary', () => {
+    const gotoSeachButton = element(by.id('button-goto-search'));
+    browser.sleep(1000);
+    gotoSeachButton.click();
+    browser.sleep(1000);
+
+    const nwlatSearchInput = element(by.id('photo-gallery-search-nwlat-input'));
+    const nwlngSearchInput = element(by.id('photo-gallery-search-nwlng-input'));
+    const selatSearchInput = element(by.id('photo-gallery-search-selat-input'));
+    const selngSearchInput = element(by.id('photo-gallery-search-selng-input'));
+    const searchButton = element(by.id('button-search'));
+
+    nwlatSearchInput.sendKeys('49.2796587');
+    browser.sleep(1000);
+    nwlngSearchInput.sendKeys('-123.1209917');
+    browser.sleep(1000);
+    selatSearchInput.sendKeys('49.1064718');
+    browser.sleep(1000);
+    selngSearchInput.sendKeys('-122.5501312');
+    browser.sleep(1000);
+
+    searchButton.click();
+    const photoCountElement = element(by.id('photo-gallery-photo-count'));
+    photoCountElement.getText().then((text) => {
+      expect(text).to.equal('1 / 5');
+    });
+  });
 });

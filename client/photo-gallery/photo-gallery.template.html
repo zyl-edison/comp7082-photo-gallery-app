@@ -10,6 +10,9 @@
     <div id="photo-gallery-display-date">
       {{$ctrl.currentPhotoCreateDate | date : 'MMM d, y h:mm:ss a'}}
     </div>
+    <div id="photo-gallery-geolocation">
+      {{$ctrl.currentPhotoLat}} {{$ctrl.currentPhotoLng}}
+    </div>
     <div class="photo-gallery-control">
       <div class="photo-gallery-control-element">
         <input id="photo-gallery-caption-input" ng-model="$ctrl.currentPhotoCaption" ng-disabled="!$ctrl.photoList.length" />
@@ -38,6 +41,22 @@
         <div class="photo-gallery-control-element">
           <label>End Date: </label>
           <input id="photo-gallery-search-enddate-input" ng-model="$ctrl.searchEnddate" />
+        </div>
+        <div class="photo-gallery-control-element">
+          <label>North West Lat: </label>
+          <input id="photo-gallery-search-nwlat-input" ng-model="$ctrl.searchNWLat" />
+        </div>
+        <div class="photo-gallery-control-element">
+          <label>North West Lng: </label>
+          <input id="photo-gallery-search-nwlng-input" ng-model="$ctrl.searchNWLng" />
+        </div>
+        <div class="photo-gallery-control-element">
+          <label>South East Lat: </label>
+          <input id="photo-gallery-search-selat-input" ng-model="$ctrl.searchSELat" />
+        </div>
+        <div class="photo-gallery-control-element">
+          <label>South East Lng: </label>
+          <input id="photo-gallery-search-selng-input" ng-model="$ctrl.searchSELng" />
         </div>
         <div class="photo-gallery-control-element">
           <button id="button-search" ng-click="$ctrl.search()">search</button>

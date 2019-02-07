@@ -57,6 +57,15 @@ h1, h2, h3, h4 {margin: 0;}
   box-sizing: border-box;
 }
 
+#photo-gallery-geolocation {
+  width: 100%;
+  color: #666666;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
 .photo-gallery-control {
   width: 100%;
   padding: 10px;
@@ -71,6 +80,7 @@ h1, h2, h3, h4 {margin: 0;}
 
 .photo-gallery-control-element label {
   width: 100px;
+  font-size: 12px;
 }
 
 .photo-gallery-control-element input {

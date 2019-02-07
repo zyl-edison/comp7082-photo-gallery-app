@@ -2,7 +2,8 @@ angular.module('photoGalleryApp').component('photoGallery', {
   templateUrl: 'photo-gallery/photo-gallery.template.html',
   controller: [
     'PhotoGallery',
-    function PhotoGalleryController(PhotoGallery) {
+    'GeoLocation',
+    function PhotoGalleryController(PhotoGallery, GeoLocation) {
       var self = this;
       this.photoIndexPointer = 0;
       this.isSearching = false;
@@ -11,16 +12,35 @@ angular.module('photoGalleryApp').component('photoGallery', {
       this.currentPhotoCreateDate = null;
       this.currentPhotoCaption = '';
       this.currentPhotoUrl = '';
+      this.currentPhotoLat = null;
+      this.currentPhotoLng = null;
       this.photoList = [];
 
       this.searchCaption = '';
       this.searchStartdate = '';
       this.searchEnddate = '';
+      this.searchNWLat = '';
+      this.searchNWLng = '';
+      this.searchSELat = '';
+      this.searchSELng = '';
 
       var _updateCurrentPhotoData = function (photo) {
+        var context = photo.context;
+        var custom, lat, lng;
+        self.currentPhotoLat = null;
+        self.currentPhotoLng = null;
         self.currentPhotoCreateDate = new Date(photo.created_at);
         self.currentPhotoCaption = photo.public_id.replace('comp7082/photo-gallery/', '');
         self.currentPhotoUrl = photo.secure_url;
+        if (context) {
+          custom = context.custom;
+          lat = custom.lat;
+          lng = custom.lng;
+          if (lat && lng) {
+            self.currentPhotoLat = lat;
+            self.currentPhotoLng = lng;
+          }
+        }
       };
 
       var _resetSearch = function () {
@@ -50,28 +70,16 @@ angular.module('photoGalleryApp').component('photoGallery', {
         self.isCameraing = false;
         PhotoGallery.listPhoto().then(function (response) {
           var data = response.data;
-          if (self.searchCaption) {
-            data = data.filter(function (d) {
-              return d.public_id.includes(self.searchCaption);
-            });
-          }
-
-          if (self.searchStartdate) {
-            data = data.filter(function (d) {
-              var createDate = new Date(d.created_at);
-              var startDate = new Date(self.searchStartdate);
-              return createDate >= startDate;
-            });
-          }
-          if (self.searchEnddate) {
-            data = data.filter(function (d) {
-              var createDate = new Date(d.created_at);
-              var endDate = new Date(self.searchEnddate);
-              return createDate <= endDate;
-            });
-          }
-
-          self.photoList = data;
+          self.photoList = PhotoGallery.filter(
+            self.searchCaption,
+            self.searchStartdate,
+            self.searchEnddate,
+            self.searchNWLng,
+            self.searchNWLat,
+            self.searchSELng,
+            self.searchSELat,
+            data
+          );
 
           if (data.length) {
             _updateCurrentPhotoData(data[self.photoIndexPointer]);
@@ -90,10 +98,9 @@ angular.module('photoGalleryApp').component('photoGallery', {
       };
 
       this.onPhotoCaptured = function(data) {
-        self.isSearching = false;
-        self.isCameraing = false;
-
-        PhotoGallery.createPhoto(data).then(function (response) {
+        PhotoGallery.createPhoto(data).then((response) => {
+          self.isSearching = false;
+          self.isCameraing = false;
           var data = response.data;
           self.photoList = [data];
           _updateCurrentPhotoData(data);
