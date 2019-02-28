@@ -4,7 +4,7 @@ angular.module('webCameraApp')
       restrict: 'E',
       templateUrl: 'web-camera/web-camera.template.html',
       scope:{
-        onPhotoCaptured: "&"
+        onPhotoCaptured: "&",
       },
       controller: ['$scope', function($scope) {
         var self = this;
@@ -21,13 +21,13 @@ angular.module('webCameraApp')
         this.onAfterCaptureButtonClick = function(accepted) {
           if (accepted) {
             var data = canvas.toDataURL('image/png');
-            $scope.onPhotoCaptured({data: data});
+            $scope.onPhotoCaptured({data: data,});
             $scope.stream.getVideoTracks()[0].stop();
           } else {
             self.isStreaming = true;
           }
         };
-      }],
+      },],
       controllerAs: '$ctrl',
       link: function(scope) {
         scope.video = document.getElementById('video');
@@ -40,4 +40,4 @@ angular.module('webCameraApp')
         });
       },
     };
-  }]);
+  },]);

@@ -62,14 +62,14 @@ angular.module('photoGalleryApp').factory('PhotoGallery', [
                   +nwLng,
                   +nwlat,
                   +seLng,
-                  +seLat,
+                  +seLat
                 );
               }
             }
           });
         }
         return data;
-      }
+      },
     };
   },
 ]);

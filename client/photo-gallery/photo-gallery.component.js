@@ -2,8 +2,7 @@ angular.module('photoGalleryApp').component('photoGallery', {
   templateUrl: 'photo-gallery/photo-gallery.template.html',
   controller: [
     'PhotoGallery',
-    'GeoLocation',
-    function PhotoGalleryController(PhotoGallery, GeoLocation) {
+    function PhotoGalleryController(PhotoGallery) {
       var self = this;
       this.photoIndexPointer = 0;
       this.isSearching = false;
@@ -89,7 +88,7 @@ angular.module('photoGalleryApp').component('photoGallery', {
             self.currentPhotoUrl = '';
           }
           _resetSearch();
-        });;
+        });
       };
 
       this.startCamera = function() {
@@ -98,13 +97,13 @@ angular.module('photoGalleryApp').component('photoGallery', {
       };
 
       this.onPhotoCaptured = function(data) {
-        PhotoGallery.createPhoto(data).then((response) => {
+        PhotoGallery.createPhoto(data).then(function (response) {
           self.isSearching = false;
           self.isCameraing = false;
           var data = response.data;
-          self.photoList = [data];
+          self.photoList = [data,];
           _updateCurrentPhotoData(data);
-        });;
+        });
       };
     },
   ],
