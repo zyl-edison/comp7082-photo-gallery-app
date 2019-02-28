@@ -1,0 +1,4 @@
+{
+  "output": "./complexity-report.md",
+  "format": "markdown"
+}
