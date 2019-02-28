@@ -1,1 +1,1 @@
-angular.module('comp7082PhotoGalleryApp', ['photoGalleryApp']);
+angular.module('comp7082PhotoGalleryApp', ['photoGalleryApp',]);

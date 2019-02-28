@@ -1,0 +1,13 @@
+{
+  "undef": true,
+  "unused": true,
+  "eqeqeq": true,
+  "maxdepth": 2,
+  "trailingcomma": true,
+  "curly": true,
+  "globals": {
+    "angular": true,
+    "navigator": true,
+    "document": true
+  }
+}

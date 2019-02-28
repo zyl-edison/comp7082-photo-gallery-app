@@ -1,1 +1,1 @@
-angular.module('photoGalleryApp', ['webCameraApp', 'geoLocationApp']);
+angular.module('photoGalleryApp', ['webCameraApp', 'geoLocationApp',]);
