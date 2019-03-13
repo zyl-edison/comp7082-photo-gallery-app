@@ -25,8 +25,8 @@ class System {
     this.configs = ymlHelper.parse(`${__dirname}/config.yml`);
     this.port = this.configs.global.api.port;
     this.apiServer = this._createApiServer();
-    this.apiServer.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
-    this.apiServer.use(bodyParser.json({limit: '50mb', extended: true}))
+    this.apiServer.use(bodyParser.urlencoded({limit: '500mb', extended: false}))
+    this.apiServer.use(bodyParser.json({limit: '500mb', extended: false}))
   }
 
   /**

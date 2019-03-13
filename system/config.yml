@@ -17,6 +17,11 @@ version1:
           url:
           method: GET
           action: acquire
+      video:
+        -
+          url:
+          method: POST
+          action: create
 
 # VERSION 2 CONFIGURATION
 version2:

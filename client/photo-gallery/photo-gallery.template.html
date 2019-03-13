@@ -2,7 +2,19 @@
   <h1>photo gallery</h1>
   <div id="photo-gallery" ng-if="!$ctrl.isSearching && !$ctrl.isCameraing">
     <div id="photo-gallery-display">
-      <img ng-src="{{$ctrl.currentPhotoUrl || 'https://res.cloudinary.com/zyl-edison/image/upload/comp7082/photo-gallery/no-image.png'}}" />
+      <img
+        ng-src="https://res.cloudinary.com/zyl-edison/image/upload/comp7082/photo-gallery/no-image.png"
+        ng-if="!$ctrl.currentType"
+      />
+      <img
+        ng-src="{{$ctrl.currentPhotoUrl}}"
+        ng-if="$ctrl.currentType === 'image'"
+      />
+      <video
+        ng-src="{{$ctrl.currentPhotoUrl}}"
+        ng-if="$ctrl.currentType === 'video'"
+        controls
+      ></video>
       <div id="photo-gallery-photo-count" ng-if="$ctrl.photoList.length > 0">
         {{$ctrl.photoIndexPointer + 1}} / {{$ctrl.photoList.length}}
       </div>

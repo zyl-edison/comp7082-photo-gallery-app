@@ -46,14 +46,23 @@ class PhotoController extends Controller {
     return (req, res) => {
       (async () => {
         try {
-          const resourcesRes = await cloudinary.v2.api.resources({
+          const imageRes = await cloudinary.v2.api.resources({
             type: 'upload',
             prefix: 'comp7082/photo-gallery',
             context: true,
             max_results: 500,
           });
-          const {resources} = resourcesRes;
-          res.status(200).send(resources.filter((r) => {
+
+          const videoRes = await cloudinary.v2.api.resources({
+            type: 'upload',
+            prefix: 'comp7082/photo-gallery',
+            context: true,
+            max_results: 500,
+            resource_type: 'video',
+          });
+          const {resources: images} = imageRes;
+          const {resources: videos} = videoRes;
+          res.status(200).send(images.concat(videos).filter((r) => {
             return !r.public_id.includes('no-image');
           }));
         } catch (e) {
