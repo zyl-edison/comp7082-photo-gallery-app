@@ -1,6 +1,6 @@
 <div id="photo-gallery-app">
   <h1>photo gallery</h1>
-  <div id="photo-gallery" ng-if="!$ctrl.isSearching && !$ctrl.isCameraing">
+  <div id="photo-gallery" ng-if="!$ctrl.isSearching && !$ctrl.isCameraing && !$ctrl.isMapping">
     <div id="photo-gallery-display">
       <img
         ng-src="https://res.cloudinary.com/zyl-edison/image/upload/comp7082/photo-gallery/no-image.png"
@@ -36,11 +36,14 @@
       </div>
       <div class="photo-gallery-control-element">
           <button id="button-goto-search" ng-click="$ctrl.gotoSearch()">search</button>
-        </div>
+      </div>
+      <div class="photo-gallery-control-element">
+          <button id="button-goto-map" ng-click="$ctrl.gotoMap()">Map</button>
+      </div>
     </div>
   </div>
 
-  <div id="photo-gallery-search" ng-if="$ctrl.isSearching && !$ctrl.isCameraing">
+  <div id="photo-gallery-search" ng-if="$ctrl.isSearching && !$ctrl.isCameraing && !$ctrl.isMapping">
     <div class="photo-gallery-control">
         <div class="photo-gallery-control-element">
           <label>Caption: </label>
@@ -75,7 +78,10 @@
         </div>
       </div>
   </div>
-  <div id="photo-gallery-camera" ng-if="$ctrl.isCameraing && !$ctrl.isSearching">
+  <div id="photo-gallery-camera" ng-if="$ctrl.isCameraing && !$ctrl.isSearching && !$ctrl.isMapping">
     <web-camera on-photo-captured="$ctrl.onPhotoCaptured(data)" />
+  </div>
+  <div id="photo-gallary-map" ng-if="$ctrl.isMapping && !$ctrl.isCameraing && !$ctrl.isSearching">
+    <map></map>
   </div>
 </div>
