@@ -8,6 +8,7 @@ angular.module('photoGalleryApp').component('photoGallery', {
       this.photoIndexPointer = 0;
       this.isSearching = false;
       this.isCameraing = false;
+      this.isMapping = false;
 
       this.currentPhotoCreateDate = null;
       this.currentPhotoCaption = '';
@@ -65,11 +66,13 @@ angular.module('photoGalleryApp').component('photoGallery', {
       this.gotoSearch = function() {
         self.isSearching = true;
         self.isCameraing = false;
+        self.isMapping = false;
       };
 
       this.search = function() {
         self.isSearching = false;
         self.isCameraing = false;
+        self.isMapping = false;
         PhotoGallery.listPhoto().then(function (response) {
           var data = response.data;
           self.photoList = PhotoGallery.filter(
@@ -97,6 +100,7 @@ angular.module('photoGalleryApp').component('photoGallery', {
       this.startCamera = function() {
         self.isCameraing = true;
         self.isSearching = false;
+        self.isMapping = false;
       };
 
       this.onPhotoCaptured = function(data) {
@@ -106,6 +110,7 @@ angular.module('photoGalleryApp').component('photoGallery', {
           PhotoGallery.createPhoto(data).then(function (response) {
             self.isSearching = false;
             self.isCameraing = false;
+            self.isMapping = false;
             var data = response.data;
             self.photoList = [data,];
             _updateCurrentPhotoData(data);
@@ -117,11 +122,18 @@ angular.module('photoGalleryApp').component('photoGallery', {
           WebCamera.createVideo(data).then(function(response) {
             self.isSearching = false;
             self.isCameraing = false;
+            self.isMapping = false;
             var data = response.data;
             self.photoList = [data,];
             _updateCurrentPhotoData(data);
           });
         }
+      };
+
+      this.gotoMap = function() {
+        self.isMapping = true;
+        self.isCameraing = false;
+        self.isSearching = false;
       };
     },
   ],
