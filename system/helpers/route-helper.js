@@ -1,4 +1,7 @@
 import express from 'express';
+import multer  from 'multer';
+
+const upload = multer({ dest: './uploads/' });
 
 /**
  * BUILD
@@ -19,10 +22,19 @@ export const build = (routes, controllers) => {
     const routeList = routes[r];
     routeList.forEach((o) => {
       const {method, url, action} = o;
-      router[method.toLowerCase()](
-        `/${r}${url ? '/' + url : ''}`,
-        ctrl[action]().bind(ctrl)
-      );
+
+      if (r === 'video' && method === 'POST') {
+        router[method.toLowerCase()](
+          `/${r}${url ? '/' + url : ''}`,
+          upload.single('file'),
+          ctrl[action]().bind(ctrl)
+        );
+      } else {
+        router[method.toLowerCase()](
+          `/${r}${url ? '/' + url : ''}`,
+          ctrl[action]().bind(ctrl)
+        );
+      }
     });
     list.push(router);
   });

@@ -2,7 +2,8 @@ angular.module('photoGalleryApp').component('photoGallery', {
   templateUrl: 'photo-gallery/photo-gallery.template.html',
   controller: [
     'PhotoGallery',
-    function PhotoGalleryController(PhotoGallery) {
+    'WebCamera',
+    function PhotoGalleryController(PhotoGallery, WebCamera) {
       var self = this;
       this.photoIndexPointer = 0;
       this.isSearching = false;
@@ -13,6 +14,7 @@ angular.module('photoGalleryApp').component('photoGallery', {
       this.currentPhotoUrl = '';
       this.currentPhotoLat = null;
       this.currentPhotoLng = null;
+      this.currentType = null;
       this.photoList = [];
 
       this.searchCaption = '';
@@ -28,6 +30,7 @@ angular.module('photoGalleryApp').component('photoGallery', {
         var custom, lat, lng;
         self.currentPhotoLat = null;
         self.currentPhotoLng = null;
+        self.currentType = photo.resource_type;
         self.currentPhotoCreateDate = new Date(photo.created_at);
         self.currentPhotoCaption = photo.public_id.replace('comp7082/photo-gallery/', '');
         self.currentPhotoUrl = photo.secure_url;
@@ -97,13 +100,28 @@ angular.module('photoGalleryApp').component('photoGallery', {
       };
 
       this.onPhotoCaptured = function(data) {
-        PhotoGallery.createPhoto(data).then(function (response) {
-          self.isSearching = false;
-          self.isCameraing = false;
-          var data = response.data;
-          self.photoList = [data,];
-          _updateCurrentPhotoData(data);
-        });
+        var type = typeof data;
+
+        if (type === 'string') {
+          PhotoGallery.createPhoto(data).then(function (response) {
+            self.isSearching = false;
+            self.isCameraing = false;
+            var data = response.data;
+            self.photoList = [data,];
+            _updateCurrentPhotoData(data);
+          });
+        } else {
+          var formdata = new FormData();
+          formdata.append('file', data);
+
+          WebCamera.createVideo(data).then(function(response) {
+            self.isSearching = false;
+            self.isCameraing = false;
+            var data = response.data;
+            self.photoList = [data,];
+            _updateCurrentPhotoData(data);
+          });
+        }
       };
     },
   ],

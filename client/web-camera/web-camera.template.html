@@ -1,7 +1,8 @@
-<video id="video" width="400" height="300" ng-show="$ctrl.isStreaming"></video>
+<video id="video" width="400" height="300" ng-show="$ctrl.isStreaming" autoplay muted></video>
 <canvas id="canvas" width="400" height="300" ng-show="!$ctrl.isStreaming"></canvas>
 <div class="photo-gallery-control-element photo-capture-control">
   <button id="button-capture" ng-click="$ctrl.onCaptureButtonClick()" ng-show="$ctrl.isStreaming">capture</button>
+  <button id="button-record" ng-click="$ctrl.onRecordButtonClick()" ng-show="$ctrl.isStreaming">{{$ctrl.isRecording ? 'recording ...' : 'record'}}</button>
   <button id="button-cancel" ng-click="$ctrl.onAfterCaptureButtonClick(false)" ng-show="!$ctrl.isStreaming">cancel</button>
   <button id="button-accept" ng-click="$ctrl.onAfterCaptureButtonClick(true)" ng-show="!$ctrl.isStreaming">accept</button>
 </div>

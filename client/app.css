@@ -45,7 +45,8 @@ h1, h2, h3, h4 {margin: 0;}
   line-height: 30px;
 }
 
-#photo-gallery-display img{
+#photo-gallery-display img,
+#photo-gallery-display video {
   width: 100%;
 }
 
@@ -138,8 +139,13 @@ h1, h2, h3, h4 {margin: 0;}
 }
 
 .photo-gallery-control-element #button-capture {
-  margin: 0 10px;
-  width: 380px;
+  margin: 0 5px 0 10px;
+  width: 185px;
+}
+
+.photo-gallery-control-element #button-record {
+  margin: 0 10px 0 5px;
+  width: 185px;
 }
 
 .photo-gallery-control-element #button-cancel {
