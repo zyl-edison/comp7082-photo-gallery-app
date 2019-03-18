@@ -3,17 +3,17 @@ angular.module('mapApp')
     return {
       restrict: 'E',
       template: '<div id="map"></div>',
-      controller: ['$scope', function($scope) {
+      // controller: ['$scope', function($scope) {
 
-      }],
+      // }],
       controllerAs: '$ctrl',
-      link: function(scope) {
+      link: function() {
         PhotoGallery.listPhoto().then(function (response) {
           var mapElm = document.getElementById('map');
           var map = new google.maps.Map(mapElm, {
-            center: {lat: 49.186332, lng: -122.849773},
+            center: {lat: 49.186332, lng: -122.849773,},
             zoom: 9,
-            disableDefaultUI: true
+            disableDefaultUI: true,
           });
 
           var data = response.data;
@@ -21,7 +21,6 @@ angular.module('mapApp')
             return d.context && d.context.custom && d.context.custom.lat && d.context.custom.lng;
           }).map((resource) => {
             const {lat, lng} = resource.context.custom;
-            if (lat)
             resource.location = {
               lat: Number(lat),
               lng: Number(lng),
@@ -38,7 +37,7 @@ angular.module('mapApp')
             `;
 
             var infowindow = new google.maps.InfoWindow({
-              content: content
+              content: content,
             });
             var m = new google.maps.Marker({
               position: d.location,
@@ -55,8 +54,8 @@ angular.module('mapApp')
             return m;
           });
 
-          var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+          new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',});
         });
       },
     };

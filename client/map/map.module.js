@@ -1,1 +1,1 @@
-angular.module('mapApp', ['photoGalleryApp']);
+angular.module('mapApp', ['photoGalleryApp',]);

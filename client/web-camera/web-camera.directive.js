@@ -6,7 +6,7 @@ angular.module('webCameraApp')
       scope:{
         onPhotoCaptured: "&",
       },
-      controller: ['$scope', '$http', function($scope, $http) {
+      controller: ['$scope', '$http', function($scope) {
         var self = this;
         var canvas = null;
         var recordingTimeMS = 5000;
@@ -50,13 +50,11 @@ angular.module('webCameraApp')
               var recorder = new MediaRecorder(mediaStream);
               var data = [];
               recorder.ondataavailable = (event) => {
-                console.log('hm......');
                 data.push(event.data);
               };
 
               recorder.start();
 
-              console.log(recorder.state + " for " + (recordingTimeMS/1000) + " seconds...");
               var stopped = new Promise((resolve, reject) => {
                 recorder.onstop = resolve;
                 recorder.onerror = (event) => {
@@ -65,25 +63,17 @@ angular.module('webCameraApp')
               });
 
               var recorded = wait(recordingTimeMS).then(() => {
-                if (recorder.state == "recording") {
+                if (recorder.state === "recording") {
                   recorder.stop();
                   self.isRecording = false;
                   $scope.$apply();
                 }
               });
 
-              return Promise.all([stopped, recorded]).then(() => data);
+              return Promise.all([stopped, recorded,]).then(() => data);
             }).then((recordedChunks) => {
-              var recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
-              $scope.onPhotoCaptured({data: recordedBlob});
-              // var formdata = new FormData();
-              // formdata.append('file', recordedBlob);
-              // $http.post('/api/v1/video', formdata, { headers: { 'Content-Type': undefined } })
-              //   .then(function (response) {
-
-              // }).catch(function (errorResponse) {
-
-              // });
+              var recordedBlob = new Blob(recordedChunks, { type: "video/webm", });
+              $scope.onPhotoCaptured({data: recordedBlob,});
             });
           }
         };

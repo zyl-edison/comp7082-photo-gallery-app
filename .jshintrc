@@ -8,6 +8,13 @@
   "globals": {
     "angular": true,
     "navigator": true,
-    "document": true
-  }
+    "document": true,
+    "setTimeout": true,
+    "MediaRecorder": true,
+    "Blob": true,
+    "FormData": true,
+    "google": true,
+    "MarkerClusterer": true
+  },
+  "esversion": 6
 }

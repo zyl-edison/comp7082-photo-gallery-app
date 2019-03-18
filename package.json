@@ -6,7 +6,7 @@
   "scripts": {
     "start": "env NODE_ENV=development WORK_DIR=\"$PWD\" nodemon --require babel-register --require babel-polyfill index.js",
     "integration": "protractor protractor.conf.js",
-    "test": "karma start",
+    "test": "jshint . | karma start",
     "hint": "jshint ."
   },
   "repository": {
