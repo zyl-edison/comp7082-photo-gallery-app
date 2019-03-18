@@ -20,6 +20,7 @@ module.exports = function(config) {
       './client/geo-location/geo-location.module.js',
       './client/geo-location/geo-location.factory.js',
       './client/web-camera/web-camera.module.js',
+      './client/map/map.module.js',
       './client/photo-gallery/photo-gallery.module.js',
       './client/photo-gallery/photo-gallery.factory.js',
       'unit-tests/*.js'

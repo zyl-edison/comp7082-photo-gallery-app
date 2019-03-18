@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "10.15.1"
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+notifications:
+  email:
+    recipients:
+    - zyl.edison@gmail.com
+    on_success: change
+    on_failure: always
+addons:
+  chrome: stable
+
