@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "env NODE_ENV=development WORK_DIR=\"$PWD\" nodemon --require babel-register --require babel-polyfill index.js",
-    "integration": "protractor protractor.conf.js",
-    "test": "jshint . | karma start",
+    "e2e": "protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox --capabilities.browserName=chrome protractor.conf.js",
+    "e2e-local": "protractor protractor.conf.js",
+    "webdriver-start": "webdriver-manager start &",
+    "webdriver-update": "webdriver-manager update",
+    "test": "karma start",
     "hint": "jshint ."
   },
   "repository": {

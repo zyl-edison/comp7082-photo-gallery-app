@@ -72,7 +72,7 @@ describe('photo gallery search', () => {
     searchButton.click();
     const photoCountElement = element(by.id('photo-gallery-photo-count'));
     photoCountElement.getText().then((text) => {
-      expect(text).to.equal('1 / 5');
+      expect(text).to.equal('1 / 2');
     });
   });
 });
