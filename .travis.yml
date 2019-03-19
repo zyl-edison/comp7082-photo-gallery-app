@@ -22,7 +22,7 @@ script:
   # run unit tests
   - npm test
   # start the app
-  - npm start
+  - npm start &
   # update Protractor and Selenium including ChromeDriver
   - npm run webdriver-update
   # launch Selenium standalone in the background
