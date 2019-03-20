@@ -1,15 +1,25 @@
-# Complexity report, 2/27/2019
+# Complexity report, 3/19/2019
 
-* Mean per-function logical LOC: 2.93030303030303
-* Mean per-function parameter count: 0.8562770562770563
-* Mean per-function cyclomatic complexity: 1.173160173160173
-* Mean per-function Halstead effort: 374.8193552405413
-* Mean per-module maintainability index: 141.3818922232583
+* Mean per-function logical LOC: 2.801101928374656
+* Mean per-function parameter count: 0.7168732782369146
+* Mean per-function cyclomatic complexity: 1.1329201101928374
+* Mean per-function Halstead effort: 368.0322609765385
+* Mean per-module maintainability index: 141.99381667473818
 * First-order density: 0%
-* Change cost: 14.285714285714285%
+* Change cost: 9.090909090909092%
 * Core size: 0%
 
-## client/geo-location/geo-location.factory.js
+## /Users/edison/Development/comp7082-photo-gallery-app/client/app.js
+
+* Physical LOC: 1
+* Logical LOC: 1
+* Mean parameter count: 0
+* Cyclomatic complexity: 1
+* Cyclomatic complexity density: 100%
+* Maintainability index: 158.7443652304801
+* Dependency count: 0
+
+## /Users/edison/Development/comp7082-photo-gallery-app/client/geo-location/geo-location.factory.js
 
 * Physical LOC: 9
 * Logical LOC: 4
@@ -39,7 +49,7 @@
     * Halstead volume: 73.08241808752197
     * Halstead effort: 341.0512844084359
 
-## client/geo-location/geo-location.module.js
+## /Users/edison/Development/comp7082-photo-gallery-app/client/geo-location/geo-location.module.js
 
 * Physical LOC: 1
 * Logical LOC: 1
@@ -49,37 +59,117 @@
 * Maintainability index: 159.42802647993392
 * Dependency count: 0
 
-## client/photo-gallery/photo-gallery.component.js
+## /Users/edison/Development/comp7082-photo-gallery-app/client/map/map.directive.js
 
-* Physical LOC: 110
-* Logical LOC: 76
-* Mean parameter count: 0.6
-* Cyclomatic complexity: 6
-* Cyclomatic complexity density: 7.894736842105263%
-* Maintainability index: 114.2114352058048
+* Physical LOC: 62
+* Logical LOC: 32
+* Mean parameter count: 0.6666666666666666
+* Cyclomatic complexity: 2
+* Cyclomatic complexity density: 6.25%
+* Maintainability index: 121.03101721333681
 * Dependency count: 0
-* Function: **PhotoGalleryController**
-    * Line No.: 5
-    * Physical LOC: 104
-    * Logical LOC: 24
+* Function: **&lt;anonymous>**
+    * Line No.: 2
+    * Physical LOC: 61
+    * Logical LOC: 5
     * Parameter count: 1
     * Cyclomatic complexity: 1
-    * Cyclomatic complexity density: 4.166666666666666%
-    * Halstead difficulty: 5.645161290322581
-    * Halstead volume: 651.4105501817313
-    * Halstead effort: 3677.3176219936445
+    * Cyclomatic complexity density: 20%
+    * Halstead difficulty: 2.2222222222222223
+    * Halstead volume: 62.907475208398566
+    * Halstead effort: 139.7943893519968
+* Function: **link**
+    * Line No.: 10
+    * Physical LOC: 51
+    * Logical LOC: 1
+    * Parameter count: 0
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 100%
+    * Halstead difficulty: 1.5
+    * Halstead volume: 25.26619429851844
+    * Halstead effort: 37.89929144777766
+* Function: **&lt;anonymous>**
+    * Line No.: 11
+    * Physical LOC: 49
+    * Logical LOC: 12
+    * Parameter count: 1
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 8.333333333333332%
+    * Halstead difficulty: 6.84
+    * Halstead volume: 361.2098617287741
+    * Halstead effort: 2470.675454224815
+* Function: **&lt;anonymous>**
+    * Line No.: 31
+    * Physical LOC: 25
+    * Logical LOC: 10
+    * Parameter count: 1
+    * Cyclomatic complexity: 2
+    * Cyclomatic complexity density: 20%
+    * Halstead difficulty: 9.472222222222223
+    * Halstead volume: 291.47885970765435
+    * Halstead effort: 2760.9525322308373
+* Function: **&lt;anonymous>**
+    * Line No.: 48
+    * Physical LOC: 6
+    * Logical LOC: 2
+    * Parameter count: 0
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 50%
+    * Halstead difficulty: 1.5
+    * Halstead volume: 39.863137138648355
+    * Halstead effort: 59.79470570797253
+* Function: **&lt;anonymous>**
+    * Line No.: 49
+    * Physical LOC: 3
+    * Logical LOC: 1
+    * Parameter count: 1
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 100%
+    * Halstead difficulty: 1.5
+    * Halstead volume: 23.264662506490403
+    * Halstead effort: 34.89699375973561
+
+## /Users/edison/Development/comp7082-photo-gallery-app/client/map/map.module.js
+
+* Physical LOC: 1
+* Logical LOC: 1
+* Mean parameter count: 0
+* Cyclomatic complexity: 1
+* Cyclomatic complexity density: 100%
+* Maintainability index: 158.7443652304801
+* Dependency count: 0
+
+## /Users/edison/Development/comp7082-photo-gallery-app/client/photo-gallery/photo-gallery.component.js
+
+* Physical LOC: 140
+* Logical LOC: 99
+* Mean parameter count: 0.6666666666666666
+* Cyclomatic complexity: 7
+* Cyclomatic complexity density: 7.07070707070707%
+* Maintainability index: 112.55114070900407
+* Dependency count: 0
+* Function: **PhotoGalleryController**
+    * Line No.: 6
+    * Physical LOC: 133
+    * Logical LOC: 27
+    * Parameter count: 2
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 3.7037037037037033%
+    * Halstead difficulty: 5.7142857142857135
+    * Halstead volume: 761.0357175688929
+    * Halstead effort: 4348.775528965101
 * Function: **_updateCurrentPhotoData**
-    * Line No.: 26
-    * Physical LOC: 18
-    * Logical LOC: 16
+    * Line No.: 29
+    * Physical LOC: 19
+    * Logical LOC: 17
     * Parameter count: 1
     * Cyclomatic complexity: 3
-    * Cyclomatic complexity density: 18.75%
-    * Halstead difficulty: 8.657894736842106
-    * Halstead volume: 376.0351774512874
-    * Halstead effort: 3255.6729837229886
+    * Cyclomatic complexity density: 17.647058823529413%
+    * Halstead difficulty: 8.5
+    * Halstead volume: 418.23987821901153
+    * Halstead effort: 3555.038964861598
 * Function: **_resetSearch**
-    * Line No.: 45
+    * Line No.: 49
     * Physical LOC: 5
     * Logical LOC: 3
     * Parameter count: 0
@@ -89,7 +179,7 @@
     * Halstead volume: 42.11032383086406
     * Halstead effort: 75.79858289555531
 * Function: **&lt;anonymous>.gotoPhoto**
-    * Line No.: 51
+    * Line No.: 55
     * Physical LOC: 10
     * Logical LOC: 8
     * Parameter count: 1
@@ -99,27 +189,27 @@
     * Halstead volume: 220.89223069906643
     * Halstead effort: 3436.101366429922
 * Function: **&lt;anonymous>.gotoSearch**
-    * Line No.: 62
-    * Physical LOC: 4
-    * Logical LOC: 2
-    * Parameter count: 0
-    * Cyclomatic complexity: 1
-    * Cyclomatic complexity density: 50%
-    * Halstead difficulty: 1.2
-    * Halstead volume: 28.07354922057604
-    * Halstead effort: 33.688259064691245
-* Function: **&lt;anonymous>.search**
-    * Line No.: 67
-    * Physical LOC: 26
+    * Line No.: 66
+    * Physical LOC: 5
     * Logical LOC: 3
     * Parameter count: 0
     * Cyclomatic complexity: 1
     * Cyclomatic complexity density: 33.33333333333333%
-    * Halstead difficulty: 2.5
-    * Halstead volume: 68.11428751370197
-    * Halstead effort: 170.28571878425493
+    * Halstead difficulty: 1.5
+    * Halstead volume: 45
+    * Halstead effort: 67.5
+* Function: **&lt;anonymous>.search**
+    * Line No.: 72
+    * Physical LOC: 27
+    * Logical LOC: 4
+    * Parameter count: 0
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 25%
+    * Halstead difficulty: 2.888888888888889
+    * Halstead volume: 88.81055323538621
+    * Halstead effort: 256.56382045778236
 * Function: **&lt;anonymous>**
-    * Line No.: 70
+    * Line No.: 76
     * Physical LOC: 22
     * Logical LOC: 9
     * Parameter count: 1
@@ -129,37 +219,57 @@
     * Halstead volume: 317.28542485580186
     * Halstead effort: 1687.381577642219
 * Function: **&lt;anonymous>.startCamera**
-    * Line No.: 94
-    * Physical LOC: 4
-    * Logical LOC: 2
+    * Line No.: 100
+    * Physical LOC: 5
+    * Logical LOC: 3
     * Parameter count: 0
     * Cyclomatic complexity: 1
-    * Cyclomatic complexity density: 50%
-    * Halstead difficulty: 1.2
-    * Halstead volume: 28.07354922057604
-    * Halstead effort: 33.688259064691245
+    * Cyclomatic complexity density: 33.33333333333333%
+    * Halstead difficulty: 1.5
+    * Halstead volume: 45
+    * Halstead effort: 67.5
 * Function: **&lt;anonymous>.onPhotoCaptured**
-    * Line No.: 99
-    * Physical LOC: 9
-    * Logical LOC: 1
+    * Line No.: 106
+    * Physical LOC: 26
+    * Logical LOC: 7
     * Parameter count: 1
-    * Cyclomatic complexity: 1
-    * Cyclomatic complexity density: 100%
-    * Halstead difficulty: 1.7999999999999998
-    * Halstead volume: 33
-    * Halstead effort: 59.39999999999999
+    * Cyclomatic complexity: 2
+    * Cyclomatic complexity density: 28.57142857142857%
+    * Halstead difficulty: 8.076923076923077
+    * Halstead volume: 189.98960215439456
+    * Halstead effort: 1534.5314020162637
 * Function: **&lt;anonymous>**
-    * Line No.: 100
-    * Physical LOC: 7
-    * Logical LOC: 5
+    * Line No.: 110
+    * Physical LOC: 8
+    * Logical LOC: 6
     * Parameter count: 1
     * Cyclomatic complexity: 1
-    * Cyclomatic complexity density: 20%
-    * Halstead difficulty: 4.444444444444445
-    * Halstead volume: 102.7985828955553
-    * Halstead effort: 456.88259064691243
+    * Cyclomatic complexity density: 16.666666666666664%
+    * Halstead difficulty: 4.75
+    * Halstead volume: 125.0204990594726
+    * Halstead effort: 593.8473705324949
+* Function: **&lt;anonymous>**
+    * Line No.: 122
+    * Physical LOC: 8
+    * Logical LOC: 6
+    * Parameter count: 1
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 16.666666666666664%
+    * Halstead difficulty: 4.75
+    * Halstead volume: 125.0204990594726
+    * Halstead effort: 593.8473705324949
+* Function: **&lt;anonymous>.gotoMap**
+    * Line No.: 133
+    * Physical LOC: 5
+    * Logical LOC: 3
+    * Parameter count: 0
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 33.33333333333333%
+    * Halstead difficulty: 1.5
+    * Halstead volume: 45
+    * Halstead effort: 67.5
 
-## client/photo-gallery/photo-gallery.factory.js
+## /Users/edison/Development/comp7082-photo-gallery-app/client/photo-gallery/photo-gallery.factory.js
 
 * Physical LOC: 75
 * Logical LOC: 40
@@ -279,47 +389,47 @@
     * Halstead volume: 208.14844815873568
     * Halstead effort: 2043.6393091948594
 
-## client/photo-gallery/photo-gallery.module.js
+## /Users/edison/Development/comp7082-photo-gallery-app/client/photo-gallery/photo-gallery.module.js
 
 * Physical LOC: 1
 * Logical LOC: 1
 * Mean parameter count: 0
 * Cyclomatic complexity: 1
 * Cyclomatic complexity density: 100%
-* Maintainability index: 158.1531201594268
+* Maintainability index: 157.63260316109313
 * Dependency count: 0
 
-## client/web-camera/web-camera.directive.js
+## /Users/edison/Development/comp7082-photo-gallery-app/client/web-camera/web-camera.directive.js
 
-* Physical LOC: 43
-* Logical LOC: 32
-* Mean parameter count: 0.6666666666666666
-* Cyclomatic complexity: 2
-* Cyclomatic complexity density: 6.25%
-* Maintainability index: 123.59685559228868
+* Physical LOC: 92
+* Logical LOC: 41
+* Mean parameter count: 0.625
+* Cyclomatic complexity: 3
+* Cyclomatic complexity density: 7.317073170731707%
+* Maintainability index: 124.0560122210691
 * Dependency count: 0
 * Function: **&lt;anonymous>**
     * Line No.: 2
-    * Physical LOC: 42
+    * Physical LOC: 91
     * Logical LOC: 8
     * Parameter count: 0
     * Cyclomatic complexity: 1
     * Cyclomatic complexity density: 12.5%
-    * Halstead difficulty: 3.269230769230769
-    * Halstead volume: 125.09775004326937
-    * Halstead effort: 408.973413602996
+    * Halstead difficulty: 3.2142857142857144
+    * Halstead volume: 131.68575291675114
+    * Halstead effort: 423.2756343752715
 * Function: **&lt;anonymous>**
     * Line No.: 9
-    * Physical LOC: 22
-    * Logical LOC: 6
+    * Physical LOC: 72
+    * Logical LOC: 10
     * Parameter count: 1
     * Cyclomatic complexity: 1
-    * Cyclomatic complexity density: 16.666666666666664%
-    * Halstead difficulty: 2.8333333333333335
-    * Halstead volume: 124
-    * Halstead effort: 351.33333333333337
+    * Cyclomatic complexity density: 10%
+    * Halstead difficulty: 2.888888888888889
+    * Halstead volume: 214.05271769459029
+    * Halstead effort: 618.374517784372
 * Function: **&lt;anonymous>.onCaptureButtonClick**
-    * Line No.: 14
+    * Line No.: 17
     * Physical LOC: 6
     * Logical LOC: 4
     * Parameter count: 0
@@ -329,7 +439,7 @@
     * Halstead volume: 151.26748332105768
     * Halstead effort: 397.07714371777644
 * Function: **&lt;anonymous>.onAfterCaptureButtonClick**
-    * Line No.: 21
+    * Line No.: 24
     * Physical LOC: 9
     * Logical LOC: 7
     * Parameter count: 1
@@ -338,9 +448,29 @@
     * Halstead difficulty: 5.066666666666666
     * Halstead volume: 167.37179237410948
     * Halstead effort: 848.0170813621546
+* Function: **wait**
+    * Line No.: 34
+    * Physical LOC: 3
+    * Logical LOC: 1
+    * Parameter count: 1
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 100%
+    * Halstead difficulty: 1
+    * Halstead volume: 8
+    * Halstead effort: 8
+* Function: **&lt;anonymous>.onRecordButtonClick**
+    * Line No.: 38
+    * Physical LOC: 42
+    * Logical LOC: 5
+    * Parameter count: 0
+    * Cyclomatic complexity: 2
+    * Cyclomatic complexity density: 40%
+    * Halstead difficulty: 5.6000000000000005
+    * Halstead volume: 134.8862737612612
+    * Halstead effort: 755.3631330630628
 * Function: **link**
-    * Line No.: 32
-    * Physical LOC: 10
+    * Line No.: 82
+    * Physical LOC: 9
     * Logical LOC: 3
     * Parameter count: 1
     * Cyclomatic complexity: 1
@@ -349,17 +479,77 @@
     * Halstead volume: 106.27403387250884
     * Halstead effort: 405.77358387685194
 * Function: **&lt;anonymous>**
-    * Line No.: 36
-    * Physical LOC: 5
-    * Logical LOC: 3
+    * Line No.: 86
+    * Physical LOC: 4
+    * Logical LOC: 2
     * Parameter count: 1
     * Cyclomatic complexity: 1
-    * Cyclomatic complexity density: 33.33333333333333%
-    * Halstead difficulty: 3.3000000000000003
-    * Halstead volume: 57
-    * Halstead effort: 188.10000000000002
+    * Cyclomatic complexity density: 50%
+    * Halstead difficulty: 2
+    * Halstead volume: 33.60451250937503
+    * Halstead effort: 67.20902501875005
 
-## client/web-camera/web-camera.module.js
+## /Users/edison/Development/comp7082-photo-gallery-app/client/web-camera/web-camera.factory.js
+
+* Physical LOC: 25
+* Logical LOC: 14
+* Mean parameter count: 1.2
+* Cyclomatic complexity: 1
+* Cyclomatic complexity density: 7.142857142857142%
+* Maintainability index: 135.46064505136897
+* Dependency count: 0
+* Function: **&lt;anonymous>**
+    * Line No.: 4
+    * Physical LOC: 21
+    * Logical LOC: 2
+    * Parameter count: 2
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 50%
+    * Halstead difficulty: 2.5
+    * Halstead volume: 27
+    * Halstead effort: 67.5
+* Function: **createVideo**
+    * Line No.: 6
+    * Physical LOC: 17
+    * Logical LOC: 1
+    * Parameter count: 1
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 100%
+    * Halstead difficulty: 1.5
+    * Halstead volume: 15.509775004326936
+    * Halstead effort: 23.264662506490403
+* Function: **&lt;anonymous>**
+    * Line No.: 7
+    * Physical LOC: 15
+    * Logical LOC: 1
+    * Parameter count: 1
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 100%
+    * Halstead difficulty: 1.5
+    * Halstead volume: 27
+    * Halstead effort: 40.5
+* Function: **&lt;anonymous>**
+    * Line No.: 8
+    * Physical LOC: 13
+    * Logical LOC: 8
+    * Parameter count: 1
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 12.5%
+    * Halstead difficulty: 5.818181818181818
+    * Halstead volume: 279.69276394968557
+    * Halstead effort: 1627.3033538890797
+* Function: **&lt;anonymous>**
+    * Line No.: 17
+    * Physical LOC: 3
+    * Logical LOC: 1
+    * Parameter count: 1
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: 100%
+    * Halstead difficulty: 0.75
+    * Halstead volume: 6.339850002884624
+    * Halstead effort: 4.754887502163468
+
+## /Users/edison/Development/comp7082-photo-gallery-app/client/web-camera/web-camera.module.js
 
 * Physical LOC: 1
 * Logical LOC: 1
