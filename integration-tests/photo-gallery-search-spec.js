@@ -75,8 +75,13 @@ describe('photo gallery search', () => {
       expect(text).to.equal('1 / 2');
     });
   });
+});
 
-  // Map
+describe('photo gallery map view', () => {
+  beforeEach(() => {
+    browser.get('http://localhost:8000');
+  });
+
   it('should show map view when click map button', () => {
     const gotoSeachButton = element(by.id('button-goto-map'));
     browser.sleep(5000);
