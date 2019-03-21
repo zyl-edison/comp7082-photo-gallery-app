@@ -85,6 +85,8 @@ describe('photo gallery', () => {
 
     it('should show map view when click map button', () => {
       const gotoSeachButton = element(by.id('button-goto-map'));
+      browser.sleep(1000);
+      gotoSeachButton.click();
       browser.sleep(5000);
 
       const map = element(by.id('map'));
@@ -93,6 +95,8 @@ describe('photo gallery', () => {
 
     it('should show map markers on the map view', () => {
       const gotoSeachButton = element(by.id('button-goto-map'));
+      browser.sleep(1000);
+      gotoSeachButton.click();
       browser.sleep(5000);
 
       const markers = element(by.css('img[usemap^="#gmimap"]'));
