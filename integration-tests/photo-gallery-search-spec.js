@@ -75,4 +75,21 @@ describe('photo gallery search', () => {
       expect(text).to.equal('1 / 2');
     });
   });
+
+  // Map
+  it('should show map view when click map button', () => {
+    const gotoSeachButton = element(by.id('button-goto-map'));
+    browser.sleep(5000);
+
+    const map = element(by.id('map'));
+    expect(map).to.not.be.null;
+  });
+
+  it('should show map markers on the map view', () => {
+    const gotoSeachButton = element(by.id('button-goto-map'));
+    browser.sleep(5000);
+
+    const markers = element(by.css('img[usemap^="#gmimap"]'));
+    expect(markers).to.not.be.null;
+  });
 });
